@@ -8,20 +8,25 @@
 import SwiftUI
 
 struct BottomNav: View {
+    @State private var selectedTab = 1
+    
     var body: some View {
-        TabView {
-            Text("")
+        TabView(selection: $selectedTab) {
+            HomeView()
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
                 }
+                .tag(1)
             Text("Favorite screen")
                 .tabItem {
                     Label("Favorite", systemImage: "heart.fill")
                 }
+                .tag(2)
             Text("Profile screen")
                 .tabItem {
                     Label("Profile", systemImage: "person.fill")
                 }
+                .tag(3)
         }
     }
 }
