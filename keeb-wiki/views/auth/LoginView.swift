@@ -23,7 +23,7 @@ struct LoginView: View {
         if showRegister {
             RegisterView()
         } else if login {
-            HomeView()
+            BottomNav()
         } else {
             VStack {
                 VStack(alignment: .leading, spacing: 6) {
