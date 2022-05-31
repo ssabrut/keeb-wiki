@@ -12,6 +12,7 @@ struct LoginView: View {
     private let radius: Float = 4.0
     private let spacing: Float = 18.0
     @State private var showRegister: Bool = false
+    @State private var login: Bool = false
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var isActive = false
@@ -21,6 +22,8 @@ struct LoginView: View {
     var body: some View {
         if showRegister {
             RegisterView()
+        } else if login {
+            HomeView()
         } else {
             VStack {
                 VStack(alignment: .leading, spacing: 6) {
@@ -36,8 +39,9 @@ struct LoginView: View {
                         .padding(.vertical, 12)
                         .background(Color("Gray"))
                         .cornerRadius(CGFloat(radius))
-                    Button("Login") {
-                        
+                    Button(action: { login = true }) {
+                        Text("Login")
+                            .frame(maxWidth: .infinity)
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 12)
