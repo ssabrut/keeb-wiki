@@ -15,6 +15,18 @@ struct HomeView: View {
         VStack {
             VStack(alignment: .leading, spacing: 6) {
                 SearchBar()
+                VStack(alignment: .leading) {
+                    Text("Categories")
+                    HStack {
+                        CategoryCard()
+                        CategoryCard()
+                        CategoryCard()
+                    }
+                    Text("Keyboard")
+                    HStack {
+                        ItemCard()
+                    }
+                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(EdgeInsets(top: 0, leading: container, bottom: 0, trailing: container))
