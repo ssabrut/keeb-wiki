@@ -16,17 +16,19 @@ struct ItemCard: View {
                 .font(.title3)
                 .fontWeight(.medium)
                 .textCase(.uppercase)
+                .padding(EdgeInsets(top: 18, leading: 0, bottom: 0, trailing: 0))
             Divider()
                 .background(.black)
                 .padding(EdgeInsets(top: 0, leading: padd, bottom: 0, trailing: padd))
             Text("Momoka")
             Image("2-removebg-preview")
         }
-        .border(.gray)
         .overlay(
             RoundedRectangle(cornerRadius: 8)
                 .stroke(.black)
+                .opacity(0.4)
         )
+        .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
     }
 }
 

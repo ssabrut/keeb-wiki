@@ -15,16 +15,27 @@ struct HomeView: View {
         VStack {
             VStack(alignment: .leading, spacing: 6) {
                 SearchBar()
-                VStack(alignment: .leading) {
-                    Text("Categories")
-                    HStack {
-                        CategoryCard()
-                        CategoryCard()
-                        CategoryCard()
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        Text("Categories")
+                            .fontWeight(.semibold)
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                        HStack {
+                            CategoryCard()
+                            CategoryCard()
+                            CategoryCard()
+                        }
                     }
-                    Text("Keyboard")
-                    HStack {
-                        ItemCard()
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
+                    VStack(alignment: .leading) {
+                        Text("Keyboard")
+                            .fontWeight(.semibold)
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 1, trailing: 0))
+                        VStack {
+                            ItemCard()
+                            ItemCard()
+                            ItemCard()
+                        }
                     }
                 }
             }

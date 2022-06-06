@@ -18,6 +18,7 @@ struct CategoryCard: View {
         .overlay(
             RoundedRectangle(cornerRadius: 8)
                 .stroke(.black)
+                .opacity(0.4)
         )
     }
 }
