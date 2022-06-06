@@ -14,9 +14,6 @@ struct HomeView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            SearchBar()
-                .padding(EdgeInsets(top: 0, leading: container, bottom: 0, trailing: container))
-            
             NavigationView {
                 ZStack {
                     List(modelData.keyboards) { keyboard in
@@ -30,35 +27,6 @@ struct HomeView: View {
                 .navigationTitle("Discover Keyboards")
             }
         }
-        
-//        VStack {
-//            VStack(alignment: .leading, spacing: 6) {
-//                SearchBar()
-//                ScrollView {
-//                    VStack(alignment: .leading) {
-//                        Text("Categories")
-//                            .fontWeight(.semibold)
-//                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-//                        HStack {
-//                            CategoryCard()
-//                            CategoryCard()
-//                            CategoryCard()
-//                        }
-//                    }
-//                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
-//                    VStack(alignment: .leading) {
-//                        Text("Keyboard")
-//                            .fontWeight(.semibold)
-//                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 1, trailing: 0))
-//                        List(keyboards, id: \.id) { keyboard in
-//                            ItemCard(keyboard: keyboard)
-//                        }
-//                    }
-//                }
-//            }
-//            .frame(maxWidth: .infinity, alignment: .leading)
-//            .padding(EdgeInsets(top: 0, leading: container, bottom: 0, trailing: container))
-//        }
     }
 }
 

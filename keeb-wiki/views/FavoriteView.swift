@@ -20,9 +20,6 @@ struct FavoriteView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            SearchBar()
-                .padding(EdgeInsets(top: 0, leading: container, bottom: 0, trailing: container))
-            
             NavigationView {
                 ZStack {
                     List {
