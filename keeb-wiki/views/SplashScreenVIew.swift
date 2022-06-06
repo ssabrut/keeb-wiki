@@ -14,7 +14,7 @@ struct SplashScreenVIew: View {
     
     var body: some View {
         if isActive {
-            LoginView()
+            BottomNav()
         } else {
             ZStack {
                 Color.blue

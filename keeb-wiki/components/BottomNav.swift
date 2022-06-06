@@ -22,7 +22,7 @@ struct BottomNav: View {
                     Label("Favorite", systemImage: "heart.fill")
                 }
                 .tag(2)
-            Text("Profile screen")
+            ProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person.fill")
                 }
