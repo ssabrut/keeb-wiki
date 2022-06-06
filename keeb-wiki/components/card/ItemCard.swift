@@ -9,10 +9,18 @@ import SwiftUI
 
 struct ItemCard: View {
     private let padd: CGFloat = 32
+    var keyboard: Keyboard
     
     var body: some View {
         VStack(alignment: .center) {
-            Text("Zoo 65")
+            VStack(alignment: .trailing) {
+                if keyboard.is_favorite {
+                    Image(systemName: "star.fill")
+                        .foregroundColor(.yellow)
+                }
+            }
+            
+            Text(keyboard.name)
                 .font(.title3)
                 .fontWeight(.medium)
                 .textCase(.uppercase)
@@ -20,20 +28,19 @@ struct ItemCard: View {
             Divider()
                 .background(.black)
                 .padding(EdgeInsets(top: 0, leading: padd, bottom: 0, trailing: padd))
-            Text("Momoka")
-            Image("2-removebg-preview")
+            Text(keyboard.designer)
+            Image(keyboard.image)
+                .resizable()
+                .frame(width: 256, height: 128, alignment: .center)
         }
-        .overlay(
-            RoundedRectangle(cornerRadius: 8)
-                .stroke(.black)
-                .opacity(0.4)
-        )
-        .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
     }
 }
 
 struct ItemCard_Previews: PreviewProvider {
     static var previews: some View {
-        ItemCard()
+        Group {
+            ItemCard(keyboard: keyboards[0])
+            ItemCard(keyboard: keyboards[1])
+        }
     }
 }
