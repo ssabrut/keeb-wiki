@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     private var container: CGFloat = 24.0
+    @EnvironmentObject var modelData: ModelData
     @State private var query: String = ""
     
     var body: some View {
@@ -18,17 +19,9 @@ struct HomeView: View {
             
             NavigationView {
                 ZStack {
-                    List(keyboards) { keyboard in
+                    List(modelData.keyboards) { keyboard in
                         NavigationLink {
-                            DetailView(
-                                name: keyboard.name,
-                                image: keyboard.image,
-                                layout: keyboard.layout,
-                                mountin_system: keyboard.mounting_system,
-                                weight: keyboard.weight,
-                                typing_angle: keyboard.typing_angle,
-                                front_height: keyboard.front_height
-                            )
+                            DetailView(keyboard: keyboard)
                         } label: {
                             ItemCard(keyboard: keyboard)
                         }

@@ -19,6 +19,7 @@ struct ItemCard: View {
                         .foregroundColor(.yellow)
                 }
             }
+            .frame(maxWidth: .infinity)
             
             Text(keyboard.name)
                 .font(.title3)
@@ -37,6 +38,8 @@ struct ItemCard: View {
 }
 
 struct ItemCard_Previews: PreviewProvider {
+    static var keyboards = ModelData().keyboards
+    
     static var previews: some View {
         Group {
             ItemCard(keyboard: keyboards[0])

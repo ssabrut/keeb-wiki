@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import Combine
 
-var keyboards: [Keyboard] = load("keyboardData.json")
+final class ModelData: ObservableObject {
+    @Published var keyboards: [Keyboard] = load("keyboardData.json")
+}
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

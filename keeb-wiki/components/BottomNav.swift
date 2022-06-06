@@ -17,7 +17,7 @@ struct BottomNav: View {
                     Label("Home", systemImage: "house.fill")
                 }
                 .tag(1)
-            Text("Favorite screen")
+            FavoriteView()
                 .tabItem {
                     Label("Favorite", systemImage: "heart.fill")
                 }
